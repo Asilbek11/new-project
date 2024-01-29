@@ -1,2 +1,1 @@
-DIQQAT DIQQAT!! (DIQQATINGIZ UCHUN RAHMAT)
-PROJECT ISHLASHI UCHUN SASS KERAK!!!!!!!
+Oddiy cssda ishlasak bo'lmaydimi ?
