@@ -1,0 +1,42 @@
+.container{
+    max-width: 1450px;
+    margin: 0 auto;
+}
+nav{
+    width: 100%;
+}
+nav > .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .container .nav-head{
+    display: flex;
+    justify-content: space-around;
+    gap: 0 80px;
+}
+nav .nav-head .logo{
+    line-height: 30px;
+}
+nav .nav-head h1{
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+nav .nav-head span{
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--primary);
+}
+nav .nav-head .nav-form{
+    padding: 15px 0;
+}
+nav .container .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 0 40px;
+}
+nav .container a{
+    font-size: 18px;
+    color: black;
+}
