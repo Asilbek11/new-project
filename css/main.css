@@ -9,7 +9,13 @@
 }
 :root{
     --primary: #4E60FF;
+    --primary-light:#F3F4FF;
+    --border-gray:#EDEEF2;
 }
 body{
     font-family: 'Nunito', sans-serif;
+}
+body ::placeholder{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
 }
