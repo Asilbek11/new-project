@@ -22,11 +22,11 @@ nav .nav-head .logo{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
 }
 nav .nav-head h1{
     font-size: 30px;
     font-weight: 800;
-    margin-bottom: 0;
 }
 nav .nav-head span{
     font-size: 25px;
@@ -44,29 +44,35 @@ nav .nav-head .nav-form input{
     background-color: var(--border-gray);
     outline: none;
     border: none;
+    font-family: 'Nunito', sans-serif;
+}
+nav .nav-body{
+    display: flex;
+    gap: 0 50px;
 }
 nav .container .nav-links{
     display: flex;
     align-items: center;
-    gap: 0 60px;
+    gap: 0 30px;
 }
 nav .nav-links div{
     display: flex;
-    gap: 0 30px;
+    gap: 0 20px;
     position: relative;
 }
 nav .nav-links div:nth-child(1){
-    padding:0 15px 0 0;
+    padding:0 25px 0 0;
     border-right: 3px solid var(--border-gray);
 }
 nav .nav-user-form{
     display: flex;
     gap:0 8px;
     align-items: center;
+    cursor: pointer;
 }
 nav .nav-user-form .nav-orders{
     padding:10px 13px; 
-    border-radius: 12px;
+    border-radius: 15px;
     background-color: var(--primary-light);
 }
 nav .nav-user-form .lord-icon{
@@ -78,9 +84,10 @@ nav .nav-user{
     width: 50px;
     height: 50px;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 15px;
     outline: 2px solid var(--border-gray);
     outline-offset: 3px;
+    cursor: pointer;
 }
 nav .nav-user img{
     position: absolute;
