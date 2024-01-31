@@ -7,15 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <!--    Navbar   -->
 
-    <nav>
+    <nav class="nav">
         <div class="container">
             <div class="nav-head">
                 <div class="logo">
@@ -25,25 +22,46 @@
                     <input type="search" placeholder="Search...">
                 </div>
             </div>
-            <div class="nav-body">
-                <div class="nav-links">
-                    <div>
-                        <a href="#">Restaruants</a>
-                        <a href="#">Deals</a>
+            <div class="nav-content">
+                <div class="nav-body">
+                    <div class="nav-links">
+                        <div>
+                            <a href="#">Restaruants</a>
+                            <a href="#">Deals</a>
+                        </div>
+                        <div>
+                            <a href="#">My orders</a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="#">My orders</a>
+                    <div class="nav-user-form">
+                        <div class="nav-orders">
+                            <lord-icon class="lord-icon" src="https://cdn.lordicon.com/evyuuwna.json"
+                                colors="primary:#4E60FF" target="div" trigger="hover"></lord-icon>
+                        </div>
+                        <div class="nav-user">
+                            <img src="img/img.jpg" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="nav-user-form">
-                    <div class="nav-orders">
-                        <lord-icon class="lord-icon" src="https://cdn.lordicon.com/evyuuwna.json" colors="primary:#4E60FF" target="div" trigger="hover" ></lord-icon>
-                    </div>
-                    <div class="nav-user">
-                        <img src="img/img.jpg" alt="">
+                <div class="nav-body-menu">
+                    <div class="nav-menu menu-btn">
+                        <lord-icon src="https://cdn.lordicon.com/whrxobsb.json" trigger="hover" target="div" colors="primary:#4E60FF"> 
+                        </lord-icon>
+                        
                     </div>
                 </div>
             </div>
+            <div class="nav-wrapper">
+                <div class="nav-wrapper-menu">
+                    <a href="#">Restaruants</a ><br>
+                    <a href="#">Deals</a ><br>
+                    <a href="#">My orders</a ><br>
+                </div>
+                <div class="nav-menu-form">
+                    <input type="search" placeholder="Search...">
+                </div>
+            </div>
+        </div>
         </div>
     </nav>
 
@@ -62,7 +80,8 @@
 
 
     <!--    Footer   -->
-
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </body>
 
