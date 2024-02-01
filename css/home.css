@@ -1,19 +1,20 @@
+/*    Navbar   */
+
 nav {
     position: relative;
     width: 100%;
     border-bottom: 2px var(--border-gray) solid;
     background-color: #fff;
+    z-index: 3;
 }
-nav.active{
-    background-color: #fff;
-    border-bottom:0px solid #fff;
-}
-nav > .container {
+
+nav>.container {
     display: flex;
     padding: 5px 60px;
     align-items: center;
     justify-content: space-between;
     gap: 0 15px;
+    background-color: #fff;
 }
 
 nav .container .nav-head {
@@ -130,13 +131,180 @@ nav .nav-body-menu {
     gap: 0 8px;
     align-items: center;
 }
-nav .nav-wrapper{
+
+nav .nav-wrapper {
     display: none;
 }
+
+/*      Navbar     */
+
+
+/*      Section    */
+section {
+    position: relative;
+}
+
+section>.container {
+    position: relative;
+    padding: 20px 60px;
+}
+
+section .suggested-deals {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 0 20px;
+}
+
+section .suggested-details {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+section .dessert-content {
+    position: relative;
+    border-radius: 18px;
+    background-color: var(--primary-light);
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+section .dessert-content .card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+section .dessert-content .card-body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 15px 0 15px 30px;
+    font-size: 18px;
+}
+
+section .card .card-body span {
+    font-weight: 400;
+    color: var(--neutral-gray);
+}
+
+section .card .card-body b span {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+section .card .card-body b h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+section .dessert-content .card-img {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+section .dessert-content .card img {
+    top: 30px;
+    right: 0;
+    position: relative;
+    width: 100%;
+}
+
+section .fastfood-content {
+    position: relative;
+}
+
+section .category-deals {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    gap: 0 10px;
+}
+
+section .category-deals .deliver-food {
+    width: 25%;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px solid var(--border-gray);
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: none;
+    transition: all 0.2s;
+}
+
+section .deliver-food:hover {
+    transition: all 0.2s;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+    background-color: var(--primary-light);
+}
+
+section .deliver-food.active {
+    transition: none;
+    border: 2.5px solid var(--primary);
+    background-color: var(--primary-light);
+}
+
+section .deliver-food lord-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*      Section    */
+
+
+
+
+/*      Footer    */
+
+
+/*      Footer    */
+
+
+
+/*      responsive        */
+
 
 @media screen and (max-width:1015px) {
     nav>.container {
         padding: 5px 40px;
+    }
+
+    section .card .card-body span {
+        font-weight: 400;
+        color: var(--neutral-gray);
+    }
+
+    section .card .card-body b span {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    section .card .card-body b h1 {
+        font-size: 40px;
+        font-weight: 800;
+        color: var(--primary);
     }
 }
 
@@ -154,25 +322,71 @@ nav .nav-wrapper{
     nav .nav-head .nav-form input {
         width: 100%;
     }
+    section .suggested-details {
+        position: relative;
+        display: grid;
+        grid-template-rows: min(300px);
+    }
+    section .dessert-content {
+        position: relative;
+        border-radius: 18px;
+        background-color: var(--primary-light);
+        height: 100%;
+        width: 100%;
+        color: black;
+    }
+    section .dessert-content .card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 35% auto;
+        grid-auto-flow: column;
+        padding: 0 10px;
+        height: 100%;
+    }
+
+    section .dessert-content .card-body {
+        flex-direction: row;
+        padding: 15px 5px;
+        order: 1;
+    }
+    section .dessert-content .card-img{
+        order: 2;
+    }
+    section .dessert-content .card img {
+        top: 30px;
+        right: 0;
+        position: relative;
+        width: 100%;
+        animation: rotating-img 30s infinite linear;
+    }
 }
 
 @media screen and (max-width:905px) {
+    nav.active {
+        background-color: #fff;
+        border-bottom: 0px solid #fff;
+    }
+
     nav>.container {
         display: flex;
         gap: 0 10px;
         padding: 10px 40px;
         position: relative;
     }
+
     nav .nav-content {
         display: flex;
         align-items: center;
         gap: 0 10px;
         position: relative;
     }
+
     nav .nav-head .nav-form {
         display: flex;
         padding: 10px 0;
     }
+
     nav .nav-user-form {
         display: flex;
         gap: 0 15px;
@@ -180,22 +394,27 @@ nav .nav-wrapper{
         border-right: 2px solid var(--border-gray);
         padding: 0 15px 0 0;
     }
-    nav .nav-body{
-        display: flex;  
+
+    nav .nav-body {
+        display: flex;
     }
+
     nav .nav-body-menu {
         display: flex;
     }
+
     nav .nav-body .nav-links {
         display: none;
     }
+
     nav .nav-menu {
         display: flex;
         padding: 12px 13px;
         border-radius: 15px;
         background-color: var(--primary-light);
     }
-    nav .menu-btn{
+
+    nav .menu-btn {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -205,85 +424,100 @@ nav .nav-wrapper{
         align-items: center;
         justify-content: center;
     }
-    nav .menu-icon-open{
+
+    nav .menu-icon-open {
         animation: icon-open-unactive 0.6s 1 forwards;
         position: absolute;
     }
-    nav .menu-icon-open.active{
+
+    nav .menu-icon-open.active {
         position: absolute;
         animation: icon-open-active 0.6s 1 forwards;
     }
-    nav .menu-icon-close{
+
+    nav .menu-icon-close {
         animation: icon-close-active 0.6s 1 forwards;
         position: absolute;
     }
-    nav .menu-icon-close.active{
+
+    nav .menu-icon-close.active {
         position: absolute;
         animation: icon-close-unactive 0.6s 1 forwards;
     }
-    nav .nav-wrapper{
+
+    nav .nav-wrapper {
         display: flex;
         width: calc(100% - 80px);
         padding: 10px 0;
         top: -130px;
-        flex-direction: column; 
+        flex-direction: column;
         position: absolute;
         gap: 8px 0;
         text-align: center;
-        transition: all 0.6s;
         z-index: -1;
         background-color: #fff;
-        transition: border transform 10s;
     }
-    nav .nav-wrapper.active{
+
+    nav .nav-wrapper.active {
         top: 90px;
         border-bottom: 2px var(--border-gray) solid;
         background-color: #fff;
         z-index: -1;
     }
-    nav .nav-wrapper-menu{
+
+    nav .nav-wrapper-menu {
         position: relative;
         width: 100%;
     }
-    nav .nav-wrapper-menu a{
+
+    nav .nav-wrapper-menu a {
         display: inline-block;
         font-size: 24px;
     }
-    nav .nav-menu-form input{
+
+    nav .nav-menu-form input {
         display: none;
     }
 }
+
 @media screen and (max-width:750px) {
-    nav .nav-wrapper.active{
-        padding: 5px 0 10px 0 ;
+    nav .nav-wrapper.active {
+        padding: 5px 0 10px 0;
         top: 90px;
         border-bottom: 2px var(--border-gray) solid;
         background-color: #fff;
         z-index: -1;
     }
-    nav .menu-icon-open{
+
+    nav .menu-icon-open {
         animation: icon-open-unactive 0.6s 1 forwards;
         position: absolute;
     }
-    nav .menu-icon-open.active{
+
+    nav .menu-icon-open.active {
         position: absolute;
         animation: icon-open-active 0.6s 1 forwards;
     }
-    nav .menu-icon-close{
+
+    nav .menu-icon-close {
         animation: icon-close-active 0.6s 1 forwards;
         position: absolute;
     }
-    nav .menu-icon-close.active{
+
+    nav .menu-icon-close.active {
         position: absolute;
         animation: icon-close-unactive 0.6s 1 forwards;
     }
-    nav .nav-wrapper-menu a{
+
+    nav .nav-wrapper-menu a {
         font-size: 22px;
     }
+
     nav .nav-head .nav-form {
         display: none;
     }
-    nav .menu-btn{
+
+    nav .menu-btn {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -293,11 +527,13 @@ nav .nav-wrapper{
         align-items: center;
         justify-content: center;
     }
-    nav .nav-menu-form{
+
+    nav .nav-menu-form {
         display: flex;
         justify-content: center;
     }
-    nav .nav-menu-form input{
+
+    nav .nav-menu-form input {
         display: block;
         position: relative;
         width: 50%;
@@ -313,35 +549,50 @@ nav .nav-wrapper{
 }
 
 @keyframes icon-open-active {
-    from{
+    from {
         transform: translate(0, 0);
     }
-    to{
+
+    to {
         transform: translate(0, -50px);
     }
 }
+
 @keyframes icon-open-unactive {
-    from{
+    from {
         transform: translate(0%, -50px);
     }
-    to{
+
+    to {
         transform: translate(0, 0);
     }
 }
 
 @keyframes icon-close-active {
-    from{
+    from {
         transform: translate(0, 50px);
     }
-    to{
+
+    to {
         transform: translate(0, 0px);
     }
 }
+
 @keyframes icon-close-unactive {
-    from{
+    from {
         transform: translate(0%, 0px);
     }
-    to{
+
+    to {
         transform: translate(0, 50px);
+    }
+}
+
+@keyframes rotating-img {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
