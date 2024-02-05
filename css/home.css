@@ -143,10 +143,12 @@ nav .nav-wrapper {
 section {
     position: relative;
 }
-
+section >:nth-child(2){
+    padding: 0px 60px!important;
+}
 section>.container {
     position: relative;
-    padding: 20px 60px;
+    padding: 20px 60px 8px 60px;
 }
 
 section .suggested-deals {
@@ -164,7 +166,7 @@ section .suggested-details {
     gap: 5px 0;
 }
 
-section .dessert-content {
+section .food-content {
     position: relative;
     border-radius: 18px;
     background-color: var(--primary-light);
@@ -173,7 +175,7 @@ section .dessert-content {
     color: black;
 }
 
-section .dessert-content .card {
+section .food-content .card {
     position: relative;
     display: grid;
     grid-template-columns: 55% 45%;
@@ -184,7 +186,7 @@ section .dessert-content .card {
     overflow: hidden;
 }
 
-section .dessert-content .card-body {
+section .food-content .card-body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -208,7 +210,7 @@ section .card .card-body b h1 {
     color: var(--primary);
 }
 
-section .dessert-content .card-img {
+section .food-content .card-img {
     display: flex;
     align-items: center;
     position: relative;
@@ -217,7 +219,7 @@ section .dessert-content .card-img {
     text-align: center;
 }
 
-section .dessert-content .card img {
+section .food-content .card img {
     top: 30px;
     right: 0;
     position: relative;
@@ -262,7 +264,7 @@ section .deliver-food:hover {
 
 section .deliver-food.active {
     transition: none;
-    border: 2.5px solid var(--primary);
+    border: 2px solid var(--primary);
     background-color: var(--primary-light);
 }
 
@@ -271,7 +273,102 @@ section .deliver-food lord-icon {
     height: 50px;
 }
 
-
+section .food-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px 0;
+}
+section .food-wrapper .food-items{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between;
+}
+section .food-items .card{
+    border-radius: 18px;
+    overflow: hidden;
+    color: black;
+    position: relative;
+    border: 1px solid var(--border-gray);
+    display: flex;
+    flex-direction: column;
+}
+section .food-items .card-body{
+    padding: 5px 14px;
+    position: relative;
+}
+section .food-items .card-body i{
+    font-size: 5px;
+    color: var(--primary);
+}
+section .food-items .card-body .fa-clock-o{
+    font-size: 18px;
+    color: var(--light-icon-gray);
+}
+section .food-items .card-body .card-info{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+section .food-items .card-body .card-time-info{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+section .food-items  .card-time-info p{
+    color: var(--neutral-gray);
+}
+section .food-items .card-info lord-icon{
+    width: 30px;
+    position: relative;
+}
+section .food-items .card .card-img{
+    position: relative;
+}
+section .food-items .card .card-img::after{
+    content: 'Featured';
+    width: 100px;
+    position: absolute;
+    background-color: var(--primary);
+    top: 0;
+    right: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius:0 0 0 18px;
+    color: #fff;
+    padding:10px 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+section .food-items .card .card-img img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+section .food-items .card-category{
+    display: flex;
+    gap: 8px;
+    padding: 5px 0;
+    max-width: 100%;
+    overflow: auto;
+}
+section .food-items .card-category span{
+    padding: 5px 8px;
+    background-color: var(--border-gray);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    text-transform: capitalize;
+}
+section .food-items .card-category span:hover{
+    background-color: var(--light-icon-gray);
+}
+section .food-items .card-category img{
+    width: 20px;
+}
 /*      Section    */
 
 
@@ -335,7 +432,7 @@ section .deliver-food lord-icon {
         display: grid;
         grid-template-rows: min(300px);
     }
-    section .dessert-content {
+    section .food-content {
         position: relative;
         border-radius: 18px;
         background-color: var(--primary-light);
@@ -343,7 +440,7 @@ section .deliver-food lord-icon {
         width: 100%;
         color: black;
     }
-    section .dessert-content .card {
+    section .food-content .card {
         position: relative;
         display: grid;
         grid-template-columns: 100%;
@@ -353,20 +450,20 @@ section .deliver-food lord-icon {
         height: 100%;
     }
 
-    section .dessert-content .card-body {
+    section .food-content .card-body {
         flex-direction: row;
         padding: 15px 5px;
         order: 1;
     }
-    section .dessert-content .card-img{
+    section .food-content .card-img{
         order: 2;
     }
-    section .dessert-content .card img {
+    section .food-content .card img {
         top: 30px;
         right: 0;
         position: relative;
         width: 100%;
-        animation: rotating-img 55s infinite linear;
+        animation: rotating-img 100s infinite linear;
     }
 }
 
