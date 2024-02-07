@@ -16,3 +16,7 @@ for (let i = 0; i < deliverBtn.length; i++) {
         deliverBtn[i].classList.toggle('active')
     })
 }
+
+fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=')
+.then(res=>res.json())
+.then(data => console.log(data))

@@ -143,9 +143,11 @@ nav .nav-wrapper {
 section {
     position: relative;
 }
-section >:nth-child(2){
-    padding: 0px 60px!important;
+
+section>:nth-child(2) {
+    padding: 0px 60px !important;
 }
+
 section>.container {
     position: relative;
     padding: 20px 60px 8px 60px;
@@ -155,14 +157,14 @@ section .suggested-deals {
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-columns: 49.5% 49.5%;
+    grid-template-columns: 49.3% auto;
     gap: 0 15px;
 }
 
 section .suggested-details {
     position: relative;
     display: grid;
-    grid-template-rows:  auto;
+    grid-template-rows: auto;
     gap: 5px 0;
 }
 
@@ -273,59 +275,73 @@ section .deliver-food lord-icon {
     height: 50px;
 }
 
-section .food-wrapper{
+section .food-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 15px 0;
+    gap: 10px 0;
+    position: relative;
 }
-section .food-wrapper .food-items{
+
+section .food-wrapper .food-items {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: space-between;
+    gap: 10px 0;
+    position: relative;
 }
-section .food-items .card{
+
+section .food-items .card {
     border-radius: 18px;
     overflow: hidden;
     color: black;
     position: relative;
     border: 1px solid var(--border-gray);
-    display: flex;
+    /* display: flex;
     flex-direction: column;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-rows: 180px auto;
 }
-section .food-items .card-body{
+
+section .food-items .card-body {
     padding: 5px 14px;
     position: relative;
 }
-section .food-items .card-body i{
+
+section .food-items .card-body i {
     font-size: 5px;
     color: var(--primary);
 }
-section .food-items .card-body .fa-clock-o{
+
+section .food-items .card-body .fa-clock-o {
     font-size: 18px;
     color: var(--light-icon-gray);
 }
-section .food-items .card-body .card-info{
+
+section .food-items .card-body .card-info {
     display: flex;
     justify-content: space-between;
     position: relative;
     align-items: center;
 }
-section .food-items .card-body .card-time-info{
+
+section .food-items .card-body .card-time-info {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-section .food-items  .card-time-info p{
+
+section .food-items .card-time-info p {
     color: var(--neutral-gray);
 }
-section .food-items .card-info lord-icon{
-    width: 30px;
+
+section .food-items .card .card-img {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
-section .food-items .card .card-img{
-    position: relative;
-}
-section .food-items .card .card-img::after{
+
+section .food-items .card .card-img.active::after {
     content: 'Featured';
     width: 100px;
     position: absolute;
@@ -335,25 +351,30 @@ section .food-items .card .card-img::after{
     text-align: center;
     font-size: 16px;
     font-weight: 400;
-    border-radius:0 0 0 18px;
+    border-radius: 0 0 0 18px;
     color: #fff;
-    padding:10px 12px;
+    padding: 10px 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-section .food-items .card .card-img img{
+
+section .food-items .card .card-img img {
     width: 100%;
     height: 100%;
     position: relative;
+    object-fit: cover;
+    object-position: center;
 }
-section .food-items .card-category{
+
+section .food-items .card-category {
     display: flex;
     gap: 8px;
     padding: 5px 0;
     max-width: 100%;
     overflow: auto;
 }
-section .food-items .card-category span{
+
+section .food-items .card-category span {
     padding: 5px 8px;
     background-color: var(--border-gray);
     border-radius: 10px;
@@ -363,12 +384,40 @@ section .food-items .card-category span{
     gap: 5px;
     text-transform: capitalize;
 }
-section .food-items .card-category span:hover{
+
+section .food-items .card-category span:hover {
     background-color: var(--light-icon-gray);
 }
-section .food-items .card-category img{
+
+section .food-items .card-category img {
     width: 20px;
 }
+
+section .food-wrapper .more-foods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+}
+
+section .food-wrapper .more-btn {
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    transition: all .4s;
+}
+
+section .food-wrapper .more-btn:hover {
+    transition: all 0.4s;
+    color: var(--primary);
+    background-color: var(--primary-light);
+}
+
 /*      Section    */
 
 
@@ -392,9 +441,9 @@ section .food-items .card-category img{
 }
 
 @media screen and (max-width:1015px) {
-    nav>.container {
-        padding: 5px 40px;
-    }   
+    section > .container , .food-wrapper{
+        padding: 5px 40px !important;
+    }
 
     section .card .card-body span {
         font-weight: 400;
@@ -427,11 +476,21 @@ section .food-items .card-category img{
     nav .nav-head .nav-form input {
         width: 100%;
     }
+
+    section .container {
+        padding: 10px 40px !important;
+    }
+
     section .suggested-details {
         position: relative;
         display: grid;
         grid-template-rows: min(300px);
     }
+
+    section .deliver-food lord-icon {
+        width: 40px;
+    }
+
     section .food-content {
         position: relative;
         border-radius: 18px;
@@ -440,6 +499,7 @@ section .food-items .card-category img{
         width: 100%;
         color: black;
     }
+
     section .food-content .card {
         position: relative;
         display: grid;
@@ -455,15 +515,30 @@ section .food-items .card-category img{
         padding: 15px 5px;
         order: 1;
     }
-    section .food-content .card-img{
+
+    section .food-content .card-img {
         order: 2;
     }
+
     section .food-content .card img {
         top: 30px;
         right: 0;
         position: relative;
         width: 100%;
         animation: rotating-img 100s infinite linear;
+    }
+
+    section .food-wrapper .food-items {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px 5px;
+        padding: 0 5px;
+    }
+    section .deliver-food lord-icon {
+        width: 34px;
+        height: 34px;
     }
 }
 
@@ -564,7 +639,7 @@ section .food-items .card-category img{
     }
 
     nav .nav-wrapper.active {
-        top: 90px;
+        top: 80px;
         border-bottom: 2px var(--border-gray) solid;
         background-color: #fff;
         z-index: -1;
@@ -588,7 +663,7 @@ section .food-items .card-category img{
 @media screen and (max-width:750px) {
     nav .nav-wrapper.active {
         padding: 5px 0 10px 0;
-        top: 90px;
+        top: 80px;
         border-bottom: 2px var(--border-gray) solid;
         background-color: #fff;
         z-index: -1;
@@ -651,6 +726,68 @@ section .food-items .card-category img{
         border: none;
         font-family: 'Nunito', sans-serif;
     }
+
+    section .food-items .card-body {
+        padding: 5px 14px;
+        font-size: 16px;
+        position: relative;
+    }
+}
+
+@media screen and (max-width:700px) {
+    section .food-wrapper .food-items {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        gap: 10px 0;
+        position: relative;
+    }
+
+    section .card .card-body span {
+        font-weight: 400;
+        color: var(--neutral-gray);
+    }
+
+    section .card .card-body b span {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    section .card .card-body b h1 {
+        font-size: 34px;
+        font-weight: 800;
+        color: var(--primary);
+    }
+
+    section .category-deals .deliver-food {
+        width: 30%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 12px;
+        border: 2px solid var(--border-gray);
+        display: flex;
+        font-weight: 600;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    section .deliver-food lord-icon {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    section .suggested-deals {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows:50% 50%;
+        gap: 0 15px;
+    }
 }
 
 @keyframes icon-open-active {
@@ -697,6 +834,7 @@ section .food-items .card-category img{
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
